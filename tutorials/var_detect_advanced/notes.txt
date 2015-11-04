@@ -1,0 +1,96 @@
+
+Khalid/Simon/Sehrish/Nuwan:
+- basic used hg19? any reason not to use hg38?
+- hg19 works with GATK?
+
+TBD: I think we should do DoC across genes or exons!
+
+!? samtoolsVersion=1.2+htslib-1.2.1
+
+phased snv example at ~1089360
+
+TBD: slides
+
+Overview
+Background - done (3)
+Preparation - done (5)
+1 QC - (ok) done (5)
+2 Alignment and DoC (15) - done?
+    - alignment ok but need to switch to bowtie2 for gatk to work - done
+    - need to check igv - ok
+    - bed ok,
+    - gatk DoC working but maybe replace with bedtools - and done
+    - would it be better to use picard-style readgroup?
+3 mpileup
+    - output looks dodgy
+    - totally broken in samtools 1.2; remove for now
+4 local realignment
+    - totally broken. try with other aligners as per simon's tests
+    - check if before and after shows interesting effect
+5 Freebayes
+    - working - polish instructions and check igv output
+    - abandoned complicated settings in favour of presets
+    - looks not so promiscous any more...
+
+TBD: add in VCF section
+
+6 UnifiedGenotyper or haplotypecaller
+   - needs testing
+7 Evaluate variants (also gatk, but could use bedtools again)
+8 Annotation
+    - VEP not owrking so have to rewrite this section completely
+    - snpeff works IF use named on demand, and either vcf or bed selected
+    - MAYBE also try downloading a vcf file of annotations and intersecting them???
+?9 Filtering (or merge in with annotation)
+   - IF we can find a tool to etiher produce tabular annotations, or to filter reliably on INFO comma-and-pipe separated fields. Otherwise just include a tiny filter by keyword in section 8
+
+
+
+## FreeBayes:
+
+TBD: check filtering setting in Galaxy; just reads, or also variants?
+
+TBD: freebayes is probably not a lot less conservative than other tools at this point, so rewrite text
+
+TBD: check whether we use realigned BAM file here
+
+TBD: find a variant in freebayes not in other caller?? or later? or at all??
+
+Testing bed-restricted, basic bam, "simple diploid": 4240 lines, look reasonable
+Testing bed-restricted, basic bam, "simple diploid with filtering and coverage": 3551 lines
+Testing bed-restricted, basic bam, custom options: set allele scope, ignore indel alleles: 3807 lines
+
+## Realignment:
+
+TBD: add/check examples
+
+* Possible site of interest at 1094320
+* or 1080728
+* maybe more exciting at 1076782
+
+maybe call indels?
+
+## UnifiedGenotyper
+
+MAYBE replace with HaplotypeCaller
+
+maybe call indels?
+
+TBD: test comparative region.
+
+TBD: We now have three different variant call sets from the same data. Browse around in IGV looking at places where they are different: eg look at: chr20:1,127,767-1,127,906
+Here each of the variant callers has given a different SNP call. This is a confusing region for SNP callers due to the 15bp deletion, which may or may not be on both alleles.
+We could immediately improve the FreeBayes callset by filtering on variant quality scores. If you want, you can do this with the NGS: GATK>Select Variants tool, choose the FreeBayes vcf file, click ‘Add new criteria to use when selecting data.’, use ‘QUAL>50’, Execute)
+
+## Variant evaluation
+
+Note that the Ti/Tv for all callsets is around 2.3 for the dbSNP concordant variants, but varies widely for the novel variants (Mpileup:2.32; FreeBayes: 2.25; GATK: 2.26). This is as expected, as these are almost certainly true variant sites.
+The Ti/Tv ratio for the Mpileup callset (input_0) looks pretty convincing: it’s 2.32 for all variants, 2.32 for the dbSNP (what we consider very likely to be true variants) and 2.32 for the novel variants. This is a very convincing set of numbers, but it’s worth noting that Mpileup called the fewest number of variants. FreeBayes, which called the most variants, has a Ti/Tv ratio for novel variants that looks very much like random noise - a Ti/Tv of 1 is what you would expect from variants with overall random base changes, which is not what we expect to see.
+It is of course easy to call the highly confident variants, the trick is in calling ALL the variants, including ones on the margin of false positive/false negative.
+So although we have a lot of confidence in the set of variants called by Mpileup, we might want to assure ourselves that this callset is exhaustive and we don’t have a high false negative rate. THIS is very hard to do!
+
+Add picture
+
+## Annotation
+
+Add galaxy-tut ref data caveat
