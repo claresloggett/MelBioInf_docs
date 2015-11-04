@@ -91,6 +91,10 @@ So although we have a lot of confidence in the set of variants called by Mpileup
 
 Add picture
 
+This is the fundamental issue with variant calling: it’s a probabilistic process and the ‘truth’ set of variants is very hard to know!
+
+Generally we would do some more filtering of the call sets using various approaches including tailored filtering on known characteristics of poor variant calls such as PCR duplicates and strand bias. If we have lots of variants we can train a classifier on known good variants (e.g. those that we find in dbsnp) to recognise the characteristics of those variants and use the classifier to try to distinguish good variant calls from bad.
+
 ## Annotation
 
 Add galaxy-tut ref data caveat

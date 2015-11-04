@@ -503,6 +503,34 @@ you should see that realignment has resulted in reads originally providing evide
 </li>
 <li>
 <p><strong>How much overlap is there in the call sets?</strong></p>
+<ul>
+<li>One way to work out how many of the variants are in common between the call sets is to produce a Venn diagram to visualise the overlap. Since all our variants are on chromosome 20, we will do this by simply comparing the positions of the SNVs. So, we will first remove the VCF headers, leaving us just the variant rows, and then we will compare the variant coordinates.</li>
+<li>Remove the header lines from a VCF file: select the tool <em>BASIC TOOLS -&gt; Filter and Sort -&gt;Select</em>.<ul>
+<li>As an input file, in <em>Select lines from</em>, select the VCF file you generated using FreeBayes.</li>
+<li>Select <em>NOT Matching</em>.</li>
+<li>As the pattern, enter "^#". <em>^</em> in regular expressions indicates the start of the line, so this is a regular expression that says we are detecting lines where there is a "#" character at the start of the line.</li>
+<li><em>Execute</em>. This should give you a new dataset, containing just the variant rows. Notice that the number of lines in this dataset now tells you how many variant calls you have!</li>
+</ul>
+</li>
+<li>Repeat the above steps to remove the header lines from VCF file that you generated using GATK UnifiedGenotyper.</li>
+<li>Create a Venn diagram: select the tool <em>STATISTICS AND VISUALISATION -&gt; Graph/Display Data -&gt; proportional venn</em>.<ul>
+<li>Enter any title you like, e.g. "FreeBayes vs UnifiedGenotyper".</li>
+<li>As <em>Input file 1</em>, select the first of the filtered files you just generated.</li>
+<li>As <em>Column index</em>, enter 1. This is the second column, i.e. the column containing the position coordinate.</li>
+<li>Under <em>as name</em>, enter a name for this input file, e.g. just "FreeBayes".</li>
+<li>As <em>Input file 2</em>, select the second of the filtered VCF files.</li>
+<li>Again as <em>Column index</em>, enter 1.</li>
+<li>Under <em>as name</em>, enter a name for this input file, e.g. just "UnifiedGenotyper".</li>
+<li><em>Execute</em>.</li>
+</ul>
+</li>
+<li>You should get an HTML file containing a Venn diagram, containing the overlap of the two sets of SNV calls. The counts below show how many variants are in each part of the diagram:<ul>
+<li>"FreeBayes \ UnifiedGenotyper" indicates the difference, i.e. how many variants were called by FreeBayes and <em>not</em> UnifiedGenotyper.</li>
+<li>"FreeBayes ∩ UnifiedGenotyper" indicates the intersection, i.e. how many variants were called by both variant callers.</li>
+</ul>
+</li>
+<li>You will probably find that FreeBayes calls variants more aggressively, and that there are more variants called by FreeBayes and not UnifiedGenotyper than vice versa. We could make FreeBayes calls more specific by filtering on e.g. variant quality score. We'd expect this to  remove many false positives, but also a few true positives.</li>
+</ul>
 </li>
 </ol>
 <h2 id="section-7-annotation">Section 7. Annotation</h2>
