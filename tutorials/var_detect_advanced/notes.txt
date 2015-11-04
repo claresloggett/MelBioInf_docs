@@ -25,8 +25,7 @@ Preparation - done (5)
     - output looks dodgy
     - totally broken in samtools 1.2; remove for now
 4 local realignment
-    - totally broken. try with other aligners as per simon's tests
-    - check if before and after shows interesting effect
+    - works, done
 5 Freebayes
     - working - polish instructions and check igv output
     - abandoned complicated settings in favour of presets
@@ -44,7 +43,9 @@ TBD: add in VCF section
 ?9 Filtering (or merge in with annotation)
    - IF we can find a tool to etiher produce tabular annotations, or to filter reliably on INFO comma-and-pipe separated fields. Otherwise just include a tiny filter by keyword in section 8
 
+## Alignment
 
+(TBD: add link) for BED 
 
 ## FreeBayes:
 
