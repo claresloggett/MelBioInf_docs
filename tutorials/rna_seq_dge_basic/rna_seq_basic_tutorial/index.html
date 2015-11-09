@@ -297,6 +297,14 @@ transcriptome is already very well characterised.</p>
     clicking <strong>User &gt; Login</strong>.</li>
 </ol>
 <h4 id="2-import-the-rna-seq-data-for-the-workshop">2.  Import the RNA-seq data for the workshop.</h4>
+<p>If you are using the public Galaxy Tutorial server or Galaxy Melbourne server,
+you can import the data directly from Galaxy. You can do this by going to
+<strong>Shared Data &gt; Published Histories</strong> on the top toolbar, and selecting
+the history called <strong>RNA-Seq_Basic_Sec_1</strong>. Then click on "Import History" on
+the top right and "start using this history" to switch to the newly imported
+history.</p>
+<p>Alternatively, if you are using your own personal Galaxy server, you can import
+the data by:</p>
 <ol>
 <li>In the tool panel located on the left, under Basic Tools select <strong>Get
     Data &gt; Upload File</strong>. Click on the <strong>Paste/Fetch data</strong> button on the
@@ -305,11 +313,17 @@ transcriptome is already very well characterised.</p>
     input area:
     <div class="code">
     https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_BASIC/C1_R1.chr4.fq
+    <br>
     https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_BASIC/C1_R2.chr4.fq
+    <br>
     https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_BASIC/C1_R3.chr4.fq
+    <br>
     https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_BASIC/C2_R1.chr4.fq
+    <br>
     https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_BASIC/C2_R2.chr4.fq
+    <br>
     https://swift.rc.nectar.org.au:8888/v1/AUTH_a3929895f9e94089ad042c9900e1ee82/RNAseqDGE_BASIC/C2_R3.chr4.fq
+    <br>
     </div>
     Select the type as 'fastqsanger' and press <strong>start</strong> to upload the
     files to Galaxy.</li>
@@ -560,7 +574,7 @@ transcription start sites.</p>
 <li><strong>Transcripts:</strong> ensembl_dm3.chr4.gtf</li>
 <li><strong>Condition:</strong>  <ul>
 <li><strong>1: Condition</strong><ul>
-<li><strong>name</strong> C1</li>
+<li><strong>name:</strong> C1</li>
 <li><strong>Replicates:</strong><ul>
 <li>Tophat on data 1: accepted_hits</li>
 <li>Tophat on data 2: accepted_hits</li>
@@ -572,7 +586,7 @@ the ctrl key for Windows or the command key for OSX.)</li>
 </ul>
 </li>
 <li><strong>2: Condition</strong><ul>
-<li><strong>name</strong> C2</li>
+<li><strong>name:</strong> C2</li>
 <li><strong>Replicates:</strong><ul>
 <li>Tophat on data 4: accepted_hits</li>
 <li>Tophat on data 5: accepted_hits</li>
@@ -676,8 +690,8 @@ the outputted file and change the name from "Filter on data x" to
     Two genes have been identified as differentially expressed between
     conditions C1 and C2:
     <ul>
-        <li>*Ank* located at chr4:137014-150378, and
-        <li>*CG2177* located at chr4:331557-334534  
+        <li><b>Ank</b> located at chr4:137014-150378, and
+        <li><b>CG2177</b> located at chr4:331557-334534
     </ul>
     Both genes have q-values of 0.00175.
 </div>
@@ -705,12 +719,12 @@ region of chr4:325197-341887.</p>
 <li><strong>Transcripts:</strong> ensembl_dm3.chr4.gtf</li>
 <li><strong>Condition:</strong>  <ul>
 <li><strong>1: Condition</strong><ul>
-<li><strong>name</strong> C1</li>
+<li><strong>name:</strong> C1</li>
 <li><strong>Replicates:</strong> Tophat on data 1: accepted_hits</li>
 </ul>
 </li>
 <li><strong>2: Condition</strong><ul>
-<li><strong>name</strong> C2</li>
+<li><strong>name:</strong> C2</li>
 <li><strong>Replicates:</strong> Tophat on data 4: accepted_hits</li>
 </ul>
 </li>
@@ -750,12 +764,12 @@ region of chr4:325197-341887.</p>
 <li><strong>Transcripts:</strong> ensembl_dm3.chr4.gtf</li>
 <li><strong>Condition:</strong>  <ul>
 <li><strong>1: Condition</strong><ul>
-<li><strong>name</strong> C1</li>
+<li><strong>name:</strong> C1</li>
 <li><strong>Replicates:</strong> Tophat on data 1: accepted_hits</li>
 </ul>
 </li>
 <li><strong>2: Condition</strong><ul>
-<li><strong>name</strong> C2</li>
+<li><strong>name:</strong> C2</li>
 <li><strong>Replicates:</strong> Tophat on data 5: accepted_hits</li>
 </ul>
 </li>
@@ -868,7 +882,7 @@ cuffmerge inputs with the <strong>Additional GTF Inputs (Lists)</strong> paramet
   transcripts</li>
 <li><strong>Condition:</strong>  <ul>
 <li><strong>1: Condition</strong><ul>
-<li><strong>name</strong> C1</li>
+<li><strong>name:</strong> C1</li>
 <li><strong>Replicates:</strong><ul>
 <li>Tophat on data 1: accepted_hits</li>
 <li>Tophat on data 2: accepted_hits</li>
@@ -878,7 +892,7 @@ cuffmerge inputs with the <strong>Additional GTF Inputs (Lists)</strong> paramet
 </ul>
 </li>
 <li><strong>2: Condition</strong><ul>
-<li><strong>name</strong> C2</li>
+<li><strong>name:</strong> C2</li>
 <li><strong>Replicates:</strong><ul>
 <li>Tophat on data 4: accepted_hits</li>
 <li>Tophat on data 5: accepted_hits</li>

@@ -169,34 +169,27 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#tutorial-overview">Tutorial Overview</a></li>
+        <li class="main active"><a href="#variant-detection-advanced-workshop">Variant Detection - Advanced Workshop</a></li>
         
-    
-        <li class="main "><a href="#background">Background</a></li>
+            <li><a href="#tutorial-overview">Tutorial Overview</a></li>
         
-    
-        <li class="main "><a href="#preparation">Preparation</a></li>
+            <li><a href="#background">Background</a></li>
         
-    
-        <li class="main "><a href="#section-1-quality-control">Section 1: Quality Control</a></li>
+            <li><a href="#preparation">Preparation</a></li>
         
-    
-        <li class="main "><a href="#section-2-alignment-and-depth-of-coverage">Section 2: Alignment and depth of coverage</a></li>
+            <li><a href="#section-1-quality-control">Section 1: Quality Control</a></li>
         
-    
-        <li class="main "><a href="#section-3-local-realignment">Section 3. Local realignment</a></li>
+            <li><a href="#section-2-alignment-and-depth-of-coverage">Section 2: Alignment and depth of coverage</a></li>
         
-    
-        <li class="main "><a href="#section-4-calling-variants-with-freebayes">Section 4. Calling variants with FreeBayes</a></li>
+            <li><a href="#section-3-local-realignment">Section 3. Local realignment</a></li>
         
-    
-        <li class="main "><a href="#section-5-calling-variants-with-gatk-unified-genotyper">Section 5. Calling variants with GATK Unified Genotyper</a></li>
+            <li><a href="#section-4-calling-variants-with-freebayes">Section 4. Calling variants with FreeBayes</a></li>
         
-    
-        <li class="main "><a href="#section-6-evaluate-variants">Section 6. Evaluate variants</a></li>
+            <li><a href="#section-5-calling-variants-with-gatk-unified-genotyper">Section 5. Calling variants with GATK Unified Genotyper</a></li>
         
-    
-        <li class="main "><a href="#section-7-annotation">Section 7. Annotation</a></li>
+            <li><a href="#section-6-evaluate-variants">Section 6. Evaluate variants</a></li>
+        
+            <li><a href="#section-7-annotation">Section 7. Annotation</a></li>
         
     
     </ul>
@@ -210,6 +203,7 @@
 
 <p> </p>
 
+<h1 id="variant-detection-advanced-workshop">Variant Detection - Advanced Workshop</h1>
 <h2 id="tutorial-overview">Tutorial Overview</h2>
 <p>In this tutorial, we will look further at variant calling from sequence data. We will:</p>
 <ul>
@@ -219,7 +213,8 @@
 <li>Annotate our called variants with reference information</li>
 </ul>
 <h2 id="background">Background</h2>
-<p>Some background reading and reference material can be found <a href="../var_detect_advanced_background/">here</a></p>
+<p>Some background reading and reference material can be found <a href="../var_detect_advanced_background/">here</a>.</p>
+<p>The slides used in this workshop can be found <a href="https://docs.google.com/presentation/d/1gsoS-ec1kCS7gBxLD4VAevhEMSsMA7TU7S8ZC_fzyEE/pub?start=false&amp;loop=false&amp;delayms=10000&amp;slide=id.gd138ad700_0_0">here</a>.</p>
 <p><strong>Where is the data in this tutorial from?</strong></p>
 <p>The data has been produced from human whole genomic DNA. Only reads that have mapped to a part of chromosome 20 have been used, to make the data suitable for an interactive tutorial. There are about one million 100bp reads in the dataset, produced on an Illumina HiSeq2000. This data was generated as part of the 1000 Genomes project: http://www.1000genomes.org/</p>
 <h2 id="preparation">Preparation</h2>
@@ -278,7 +273,7 @@ If you put them in the same upload box, make sure there is a newline between the
 <p>The aim here is to evaluate the quality of the short data. If the quality is poor, then adjustments can be made - eg trimming the short reads, or adjusting your expectations of the final outcome!</p>
 <ol>
 <li><strong>Analyse the quality of the reads in the FASTQ file.</strong><ul>
-<li>From the left hand tool panel in Galaxy, under <em>NGS ANALYSIS</em>, select <em>NGS: QC and manipulation -&gt; FASTQC</em></li>
+<li>From the left hand tool panel in Galaxy, under <em>NGS ANALYSIS</em>, select <em>NGS: QC and manipulation -&gt; FastQC</em></li>
 <li>Select one of the FASTQ files as input and <em>Execute</em> the tool.</li>
 <li>When the tool finishes running, you should have an HTML file in your History. Click on the eye icon to view the various quality metrics.</li>
 </ul>
@@ -304,7 +299,7 @@ If you put them in the same upload box, make sure there is a newline between the
 </ul>
 </li>
 <li>You can leave other read group information blank, and use default Bowtie2 settings. <em>Execute</em> the tool.</li>
-<li>When the alignment has finished, you should rename the BAM file to something more convenient, such as <strong>NA12878.chr20_2mb.30xPE.BWA_mapped.bam</strong>.</li>
+<li>When the alignment has finished, you should rename the BAM file to something more convenient, such as <strong>NA12878.chr20_2mb.30xPE.bam</strong>.</li>
 <li><em>Note: we assume that you have seen BAM and SAM files before. If you have not you may want to try out the Basic Variant Calling workshop, or take the time now to convert your BAM file to a SAM file and examine the contents.</em></li>
 </ul>
 </li>

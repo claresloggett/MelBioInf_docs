@@ -293,16 +293,19 @@ Look at the various quality scores. The data looks pretty good - <em>high Per ba
 <p>The basic process here to map individual reads - from the input sample FASTQ file - to a matching region on the reference genome.</p>
 <ol>
 <li>Map/align the reads with the <a href="http://bio-bwa.sourceforge.net/">BWA</a> tool to Human reference genome 19 (hg19) <a href="http://genome.ucsc.edu/cgi-bin/hgTracks">UCSC hg19</a>.
-  From the Galaxy tools panel, select
-  ```
-  NGS: Mapping &gt; Map with BWA-MEM [3-5mins]</li>
+  From the Galaxy tools panel, select</li>
 </ol>
-<p>From the options:
-  Using reference genome: set to hg19.
-  Single or Paired-end reads: set to Single</p>
-<p>keep other options as default and click execute
-  ```
-  <em>Note: This is the longest step in the workshop and will take a few minutes, possibly more depending on how many people are also scheduling mappings</em></p>
+<div class=code>
+    NGS: Mapping > Map with BWA-MEM [3-5mins]<br>
+
+    From the options:<br>
+    Using reference genome: set to hg19.<br>
+    Single or Paired-end reads: set to Single<br>
+
+    keep other options as default and click execute
+</div>
+
+<p><em>Note: This is the longest step in the workshop and will take a few minutes, possibly more depending on how many people are also scheduling mappings</em></p>
 <ol>
 <li>Sort the BAM file.
   From the Galaxy tools panel, select
