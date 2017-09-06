@@ -1070,7 +1070,7 @@ the github version (which it calls <code>origin/master</code>).</p>
 <p>Push the commit in your local repository to github (thus synchronising them).</p>
 <pre><code>$ git push origin
 Username for 'https://github.com': &lt;type your github username&gt;
-Password for 'https://&lt;your github username&gt;@github.com':
+Password for 'https://&lt;your github username&gt;@github.com': 
 Counting objects: 4, done.
 Delta compression using up to 16 threads.
 Compressing objects: 100% (2/2), done.
@@ -1131,7 +1131,7 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 </code></pre>
 
 <p>Stage the new changes and commit them, and check the status again:</p>
-<pre><code>$ git add hello.py
+<pre><code>$ git add hello.py 
 $ git commit -m &quot;Added a comment&quot;
 [documentation 9bbe430] Added a comment
 1 files changed, 1 insertions(+), 0 deletions(-)
@@ -1143,7 +1143,7 @@ nothing to commit (working directory clean)
 <p>Now we can push the new “documentation” branch to github:</p>
 <pre><code>$ git push origin documentation
 Username for 'https://github.com': &lt;your github username&gt;
-Password for 'https://&lt;your github username&gt;@github.com':
+Password for 'https://&lt;your github username&gt;@github.com': 
 Counting objects: 5, done.
 Delta compression using up to 16 threads.
 Compressing objects: 100% (2/2), done.
@@ -1164,7 +1164,7 @@ Switched to branch 'master'
 
 <p>You can confirm that the master branch does not yet have the changes
 made in the documentation branch:</p>
-<pre><code>$ cat hello.py
+<pre><code>$ cat hello.py 
 print(&quot;hello world&quot;)
 </code></pre>
 
@@ -1183,7 +1183,7 @@ master and documentation. In this case git automatically updates the
 tracked files in the current branch.</p>
 <p>We can test that the changes have taken place by looking at the contents
 of hello.py:</p>
-<pre><code>$ cat hello.py
+<pre><code>$ cat hello.py 
 print(&quot;hello world&quot;)
 #this is a comment
 </code></pre>
@@ -1199,7 +1199,7 @@ nothing to commit (working directory clean)
 <p>Push the changes in the master branch back to github:</p>
 <pre><code>$ git push origin master
 Username for 'https://github.com': bjpop
-Password for 'https://bjpop@github.com':
+Password for 'https://bjpop@github.com': 
 Total 0 (delta 0), reused 0 (delta 0)
 To https://github.com/bjpop/test.git
 b1cce11..9bbe430 master -&gt; master
