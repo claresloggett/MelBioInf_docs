@@ -520,15 +520,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-call-variants-with-freebayes" title="5. Call variants with FreeBayes" class="md-nav__link">
-    5. Call variants with FreeBayes
+  <a href="#6-call-variants-with-freebayes" title="6. Call variants with FreeBayes" class="md-nav__link">
+    6. Call variants with FreeBayes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-further-steps" title="6. Further steps" class="md-nav__link">
-    6. Further steps
+  <a href="#7-further-steps" title="7. Further steps" class="md-nav__link">
+    7. Further steps
   </a>
   
 </li>
@@ -1020,15 +1020,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-call-variants-with-freebayes" title="5. Call variants with FreeBayes" class="md-nav__link">
-    5. Call variants with FreeBayes
+  <a href="#6-call-variants-with-freebayes" title="6. Call variants with FreeBayes" class="md-nav__link">
+    6. Call variants with FreeBayes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-further-steps" title="6. Further steps" class="md-nav__link">
-    6. Further steps
+  <a href="#7-further-steps" title="7. Further steps" class="md-nav__link">
+    7. Further steps
   </a>
   
 </li>
@@ -1349,7 +1349,7 @@ Each character represents one of the following (the longer this string, higher t
 <p>Examine your two pileup files and understand the difference between them. Which coordinates are present in each? What do the bases look like in one compared to the other? Compare the variant quality score (in column 6) to the bases listed on each row.</p>
 </li>
 </ol>
-<h2 id="5-call-variants-with-freebayes">5. Call variants with FreeBayes</h2>
+<h2 id="6-call-variants-with-freebayes">6. Call variants with FreeBayes</h2>
 <p>FreeBayes is a Bayesian variant caller which assesses the likelihood of each possible genotype for each position in the reference genome, given the observed reads at that position, and reports back the list of possible variants. We look at it in more detail in the <a href="../../var_detect_advanced/var_detect_advanced">Advanced Variant Calling</a> tutorial.</p>
 <ol>
 <li>
@@ -1442,8 +1442,11 @@ Each character represents one of the following (the longer this string, higher t
 <li>Try comparing to the corresponding location in the pileup file. You can filter to the same window as we just opened in IGV with the tool <em>Filter and Sort &gt; Filter</em>. Choose your previously-filtered pileup file as input, and set the filter condition to <code>c1=="chr22" and c2 &gt; 36006744 and c2 &lt; 36007406</code>.</li>
 </ul>
 </li>
+<li>
+<p><strong>Optional: filter variants</strong>: See if you can work out how to filter your VCF file to variants with quality scores greater than 50. You can use the <em>Filter and Sort: Filter</em> tool we used above.</p>
+</li>
 </ol>
-<h2 id="6-further-steps">6. Further steps</h2>
+<h2 id="7-further-steps">7. Further steps</h2>
 <p>We've seen how to:</p>
 <ul>
 <li>Align the raw data (sequence reads) to a reference genome</li>
