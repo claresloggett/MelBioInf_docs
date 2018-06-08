@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.0">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
@@ -40,13 +40,14 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.aa3de92b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
       
     
     
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
@@ -86,8 +87,8 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#long-read-assembly-workshop" tabindex="1" class="md-skip">
@@ -288,7 +289,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../hpc/robinson-hpc-link/" title="Introduction to HPC" class="md-nav__link">
+    <a href="../hpc/hpc/" title="Introduction to HPC" class="md-nav__link">
       Introduction to HPC
     </a>
   </li>
@@ -300,7 +301,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../unix/robinson-unix-link/" title="Introduction to Unix" class="md-nav__link">
+    <a href="../unix/unix/" title="Introduction to Unix" class="md-nav__link">
       Introduction to Unix
     </a>
   </li>
@@ -694,6 +695,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#activate-the-conda-environment" title="Activate the conda environment" class="md-nav__link">
+    Activate the conda environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#create-a-new-working-directory-on-your-remote-computer" title="Create a new working directory on your remote computer." class="md-nav__link">
     Create a new working directory on your remote computer.
   </a>
@@ -895,6 +903,8 @@
   </a>
   
 </li>
+      
+      
       
       
       
@@ -1052,10 +1062,58 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
-      Protocols
+      Molecular Modelling Tutorials
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
+        Molecular Modelling Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../molecular_dynamics_101/molecular_dynamics_101/" title="Molecular Dynamics - Introduction to cluster computing" class="md-nav__link">
+      Molecular Dynamics - Introduction to cluster computing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../molecular_dynamics_201/molecular_dynamics_201/" title="Molecular Dynamics - Building input files, visualising the trajectory" class="md-nav__link">
+      Molecular Dynamics - Building input files, visualising the trajectory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Protocols
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
         Protocols
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1123,6 +1181,13 @@
           <li class="md-nav__item">
   <a href="#windows-users" title="Windows users" class="md-nav__link">
     Windows users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activate-the-conda-environment" title="Activate the conda environment" class="md-nav__link">
+    Activate the conda environment
   </a>
   
 </li>
@@ -1332,6 +1397,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -1378,6 +1445,12 @@
 <li>Under "Login as:" enter "researcher"</li>
 <li>Type in the password provided. </li>
 </ul>
+<h3 id="activate-the-conda-environment">Activate the conda environment</h3>
+<p>Type in:</p>
+<pre><code>source /mnt/gvl/apps/conda/bin/activate
+</code></pre>
+
+<p>(This points us to some different directories for the software we need). </p>
 <h3 id="create-a-new-working-directory-on-your-remote-computer">Create a new working directory on your remote computer.</h3>
 <p>Because we are starting a new analysis it is always good practice to start in a new empty directory. Therefore, we will create a new directory and change to it for the rest of the workshop.</p>
 <p>In your terminal:</p>
@@ -1420,9 +1493,9 @@
 <li>Repeat this for the other two files. </li>
 </ul>
 <h2 id="3-assemble">3. Assemble<a name="assemble"></a></h2>
-<p>We will use the assembly software called <a href="http://canu.readthedocs.io/en/stable/">Canu</a>, version 1.6.</p>
+<p>We will use the assembly software called <a href="http://canu.readthedocs.io/en/stable/">Canu</a>, version 1.7.</p>
 <p>Run Canu with these commands:</p>
-<pre><code class="text">canu -p canu -d canu_outdir genomeSize=0.03m -pacbio-raw pacbio.fq
+<pre><code class="text">canu -p canu -d canu_outdir genomeSize=0.03m corThreads=3 -pacbio-raw pacbio.fq
 </code></pre>
 
 <ul>
@@ -1430,6 +1503,7 @@
 <li><code>-p canu</code> names prefix for output files ("canu")</li>
 <li><code>-d canu_outdir</code> names output directory ("canu_outdir")</li>
 <li><code>genomeSize</code> only has to be approximate. (In this case we are using a partial genome of expected size 30,000 base pairs). </li>
+<li><code>corThreads=3</code> sets the number of available threads. </li>
 <li>Canu will correct, trim and assemble the reads.</li>
 <li>Various output will be displayed on the screen.</li>
 <li><em>Note</em>: Canu could say "Finished" but may still be running. In this case, type <code>squeue</code> to see if jobs are still running. </li>
@@ -1462,9 +1536,9 @@
 </code></pre>
 
 <ul>
-<li>This will show the contigs found by Canu. e.g.,  tig00000001  39136</li>
+<li>This will show the contigs found by Canu. e.g.,  tig00000001  42107</li>
 <li>"tig00000001" is the name given to the contig</li>
-<li>"39136" is the number of base pairs in that contig.</li>
+<li>"42107" is the number of base pairs in that contig.</li>
 </ul>
 <p>This matches what we were expecting for this sample (approximately 30,000 base pairs). For other data, Canu may not be able to join all the reads into one contig, so there may be several contigs in the output.</p>
 <p>We should also look at the <fn>canu.report</fn>. To do this:</p>
@@ -1480,7 +1554,7 @@
 </ul>
 <h3 id="questions">Questions</h3>
 <p>How do long- and short-read assembly methods differ?</p>
-<p><details bgcolour='green'>
+<p><details>
 <summary>Answer (click to reveal)</summary>
 Short reads are usually assembled with De Bruijn graphs. For long reads, there is a move back towards simpler overlap-layout-consensus methods.
 </details></p>
@@ -1560,7 +1634,7 @@ A useful program is <a href="https://rrwick.github.io/Bandage/">Bandage</a>. If 
 
 <ul>
 <li>The contig "tig00000001" has a length of 30019.</li>
-<li>This is about 9000 bases shorter than before circularisation. This was the "overhang" and has now been trimmed. </li>
+<li>This is about 12,000 bases shorter than before circularisation. This was the "overhang" and has now been trimmed. </li>
 </ul>
 <p>Copy the circularised contigs file to the main analysis directory with a new name:</p>
 <pre><code>cp 06.fixstart.fasta ../contig1.fasta
@@ -1848,7 +1922,7 @@ Possibly. One option is the program called Unicycler which may automate many of 
 </code></pre>
 
 <ul>
-<li>chromosome - 30060 (net +41 bases)</li>
+<li>chromosome - 30059 (net +40 bases)</li>
 <li>plasmid - 2252 (no change)</li>
 </ul>
 <p>Change the file name: </p>
@@ -1873,7 +1947,7 @@ Illumina reads have higher accuracy.
 Yes, if accuracy adequate.
 </details></p>
 <h2 id="8-comparative-genomics">8. Comparative Genomics</h2>
-<p>In the workshop so far, we used a partial bacterial genome so that the exercises could run in the time available. As a demonstration, to better see the effect of long and short reads on the assembly, we will examine complete bacterial genome. </p>
+<p>In the workshop so far, we used a partial bacterial genome so that the exercises could run in the time available. As a demonstration, to better see the effect of long and short reads on the assembly, we will examine a complete bacterial genome. </p>
 <h3 id="assemblies">Assemblies</h3>
 <p>This bacterial genome has been assembled from either long PacBio reads (using Canu) or shorter Illumina reads (using Spades). </p>
 <p>Assembly graphs:</p>
@@ -1973,6 +2047,8 @@ There may be multiple copies of the rRNAs and these could have been collapsed as
               
               
                 
+
+
               
             </article>
           </div>
@@ -2040,9 +2116,9 @@ There may be multiple copies of the rRNAs and these could have been collapsed as
       
     </div>
     
-      <script src="../../assets/javascripts/application.9fb73e57.js"></script>
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
       
     
     
